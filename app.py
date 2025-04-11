@@ -19,8 +19,7 @@ st.title("🔍 Ring Scanner")
 uploaded_file = st.file_uploader("Upload a ring photo", type=["jpg", "jpeg", "png"])
 
 if uploaded_file:
-  image_path = next(iter(uploaded_file))
-  image = Image.open(image_path).convert('RGB')
+  image = Image.open(uploaded_file).convert('RGB')
   st.image(image, caption="Uploaded Ring", use_column_width=True)
 
   model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k')
