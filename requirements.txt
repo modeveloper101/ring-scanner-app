@@ -1,0 +1,6 @@
+streamlit
+weaviate-client
+torch
+torchvision
+pillow
+open-clip-torch
