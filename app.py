@@ -41,16 +41,27 @@ if uploaded_file:
 
   results = collection.query.near_vector(
     near_vector=embedding,
-    limit=1,
+    limit=2,
     return_metadata=MetadataQuery(distance=True)
   )
 
   if results.objects:
-    obj = results.objects[0]
-    st.success("✅ Match found:")
-    st.write("**Name:**", obj.properties["name"])
-    st.write("**Description:**", obj.properties["description"])
-    st.write("**Ring ID:**", obj.properties["ringID"])
+    st.success("✅ Matches found:")
+    for i, obj in enumerate(results.objects, start=1):
+      st.subheader(f"Match #{i}")
+      st.write("**Name:**", obj.properties["name"])
+      st.write("**Description:**", obj.properties["description"])
+      st.write("**Ring ID:**", obj.properties["ringID"])
+      st.markdown("---")
   else:
     st.warning("No match found.")
+
+  # if results.objects:
+  #   obj = results.objects[0]
+  #   st.success("✅ Match found:")
+  #   st.write("**Name:**", obj.properties["name"])
+  #   st.write("**Description:**", obj.properties["description"])
+  #   st.write("**Ring ID:**", obj.properties["ringID"])
+  # else:
+  #   st.warning("No match found.")
 
