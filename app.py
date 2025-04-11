@@ -28,7 +28,7 @@ if uploaded_file:
   # Create embedding
   with torch.no_grad():
     image_features = model.encode_image(image_input)
-  test_vector = test_features[0].tolist()
+  test_vector = image_features[0].tolist()
   embedding = test_vector[:10]
 
   client = weaviate.connect_to_weaviate_cloud(
