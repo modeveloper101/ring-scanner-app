@@ -201,14 +201,15 @@ with col2:
                                     st.metric("Similarity", f"{similarity_score:.2%}")
                             
                             # Description
-                            description = obj.properties.get("description", "No description available")
-                            st.text_area(
-                                f"Description (Match #{i})", 
-                                value=description, 
-                                height=60, 
-                                disabled=True,
-                                key=f"desc_{i}"
-                            )
+                            st.metric("Description", obj.properties.get("description", "N/A"))
+                            # description = obj.properties.get("description", "No description available")
+                            # st.text_area(
+                            #     f"Description (Match #{i})", 
+                            #     value=description, 
+                            #     height=60, 
+                            #     disabled=True,
+                            #     key=f"desc_{i}"
+                            # )
                             
                             if show_distance and hasattr(obj, 'metadata') and obj.metadata.distance is not None:
                                 st.caption(f"🎯 Distance score: {obj.metadata.distance:.4f}")
