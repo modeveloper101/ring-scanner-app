@@ -230,8 +230,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 1rem;'>
     <p>💍 Ring Scanner - Powered by OpenCLIP and Weaviate</p>
-    <p><em>Upload a ring photo to find similar items in our database</em></p>
-    <p><small>⚠️ Note: Using 10-dimensional embeddings (truncated from 512-dim CLIP features)</small></p>
 </div>
 """, unsafe_allow_html=True)
 
