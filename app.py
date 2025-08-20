@@ -170,22 +170,22 @@ with col2:
             embedding = generate_embedding(image, model, preprocess)
             
             if embedding:
-                st.success(f"✅ Generated 10-dimensional embedding (truncated from 512)")
+                # st.success(f"✅ Generated 10-dimensional embedding (truncated from 512)")
                 
                 # Search for matches
                 results = search_similar_rings(collection, embedding, search_limit)
                 
                 if results and results.objects:
-                    st.success(f"🎯 Found {len(results.objects)} match(es)")
+                    # st.success(f"🎯 Found {len(results.objects)} match(es)")
                     
                     # Display matches
                     for i, obj in enumerate(results.objects, start=1):
                         with st.container():
-                            st.markdown(f"""
-                            <div class="match-card">
-                                <h3>🏆 Match #{i}</h3>
-                            </div>
-                            """, unsafe_allow_html=True)
+                            # st.markdown(f"""
+                            # <div class="match-card">
+                            #     <h3>🏆 Match #{i}</h3>
+                            # </div>
+                            # """, unsafe_allow_html=True)
                             
                             # Create metrics layout
                             metric_col1, metric_col2 = st.columns(2)
