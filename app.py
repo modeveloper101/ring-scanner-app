@@ -169,7 +169,7 @@ with col2:
             # Generate embedding
             embedding = generate_embedding(image, model, preprocess)
             
-                            if embedding:
+            if embedding:
                 st.success(f"✅ Generated 10-dimensional embedding (truncated from 512)")
                 
                 # Search for matches
