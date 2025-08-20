@@ -19,7 +19,7 @@ client = weaviate.connect_to_weaviate_cloud(
   auth_credentials=Auth.api_key(weaviate_api_key),
 )
 
-collection = client.collections.get("My_Data")
+collection = client.collections.get("ModelsCollection")
 
 
 st.title("🔍 Ring Scanner")
@@ -63,7 +63,8 @@ if uploaded_file:
     st.success("✅ Match found:")
     st.write("**Name:**", obj.properties["name"])
     st.write("**Description:**", obj.properties["description"])
-    st.write("**Ring ID:**", obj.properties["ringID"])
+    st.write("**Price:**", obj.properties["price"])
+    st.write("**Ring ID:**", obj.properties["ringId"])
   else:
     st.warning("No match found.")
 
